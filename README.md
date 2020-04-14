@@ -6,7 +6,7 @@ Attachment 🏷️ Python Programming Language and Using MatLab Platform
 ✔️ HSV
 ✔️ GLCM
 ✔️ LAB
-
+---------------------------
 **Used Methods in Feature Extraction**
 ✔️ Standard Deviation
 ✔️ Mean
