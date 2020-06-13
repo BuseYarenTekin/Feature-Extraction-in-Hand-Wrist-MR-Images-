@@ -1,5 +1,5 @@
 # Feature Extraction in Hand Wrist MR Images 🦴
-Attachment 🏷️ Python Programming Language and Using MatLab Platform
+Attachment 🏷️ Python Programming Language
 -----------
 **Used Color Spaces**
 ✔️ RGB 
