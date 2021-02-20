@@ -1,10 +1,10 @@
-D1 = 'E:\DERSLER\Yüksek Lisans\1. Dönem\Görüntü Ýþleme\Kodlar ve Bilgiler\Matlab\dataset\data_preprocess';
+D1 = 'PathofDataPreprocessImages;
 S1 = dir(fullfile(D1,'*.bmp')); % pattern to match filenames.  
 i=1;
 for k = 1:numel(S1)   %number of array elements.
     F = fullfile(D1,S1(k).name);
     image = imread(F); 
-    % Görüntü RGB ise;
+    % GÃ¶rÃ¼ntÃ¼ RGB ise;
     if size(image,3)==3
 %         image= rgb2gray(image);
         redChannel = image(:, :, 1);
