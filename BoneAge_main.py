@@ -10,8 +10,8 @@ CATEGORIES =['LeftBone']
 WIDTH=500
 HEIGHT = 600
 #filenames = os.listdir("dataset/")
-#features = os.listdir("Features/Orta Parmak")
-#dosyaİsmi = "Features/Orta Parmak/ROI_aza nil baştaş.jpg"
+#features = os.listdir("Features/Middle Finger")
+#dosyaİsmi = "Features/Middle Finger/ROI_sampleimage.jpg"
 
 training_data=[]
 
@@ -24,26 +24,26 @@ def create_training_data():
                 img_array = cv2.imread(os.path.join(path, img), cv2.IMREAD_GRAYSCALE)
                 new_array = cv2.resize(img_array,(WIDTH,HEIGHT))
                 plt.imshow(new_array,cmap="gray")
-                plt.title('El bilek görüntüleri')
-                #edges = cv2.Canny(new_array,15,30)
-                # plt.subplot(121),plt.imshow(new_array,cmap = 'gray')
-                # plt.title('Original Image'), plt.xticks([]), plt.yticks([])
-                # plt.subplot(122),plt.imshow(edges,cmap = 'gray')
-                # plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
+                plt.title('Hand Wrist Images:')
+                edges = cv2.Canny(new_array,15,30)
+                plt.subplot(121),plt.imshow(new_array,cmap = 'gray')
+                plt.title('Original Image'), plt.xticks([]), plt.yticks([])
+                plt.subplot(122),plt.imshow(edges,cmap = 'gray')
+                plt.title('Edge Image'), plt.xticks([]), plt.yticks([])
                 plt.show()
-                #bolge = edges[90:455, 180:240]
-                #cv2.imshow('ROI ile seçilmiş görüntü', bolge)
+                #region = edges[90:455, 180:240]
+                #cv2.imshow('Selected images with ROI', region)
                 cv2.waitKey(0)
                 cv2.destroyAllWindows()
-                # Aşınma ve Genişleme(Erotion & Dilation)
+                # Erotion & Dilation
                 # kernel = np.ones((5,5), np.uint8)
                 # erosion = cv2.erode(img_array, kernel, iterations=1)
                 # dilation = cv2.dilate(img_array, kernel, iterations=1)
-                # plt.subplot(321), plt.imshow(img_array), plt.title('Orijinal Görüntü')
+                # plt.subplot(321), plt.imshow(img_array), plt.title('Original Image')
                 # plt.xticks([]), plt.yticks([])
-                # plt.subplot(322), plt.imshow(erosion), plt.title('Aşınmış Görüntü')
+                # plt.subplot(322), plt.imshow(erosion), plt.title('Erosioned Image')
                 # plt.xticks([]), plt.yticks([])
-                # plt.subplot(323), plt.imshow(dilation), plt.title('Genişlemiş Görüntü')
+                # plt.subplot(323), plt.imshow(dilation), plt.title('Dilated Image')
                 # plt.xticks([]), plt.yticks([])
 
                 training_data.append([new_array,class_num])
